@@ -10,5 +10,9 @@ target 'MySocialApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'FacebookLogin'
+  pod 'FBSDKCoreKit'
+
+
 
 end
