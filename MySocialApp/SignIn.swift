@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignIn: UIViewController {
     
@@ -18,7 +19,14 @@ class SignIn: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        if let _ = KeychainWrapper.standard.string(forKey: key_Uid)
+        {
+            performSegue(withIdentifier: "FeedVC", sender: nil)
+        }
     }
 
     @IBAction func facebookbuttontapped(_ sender: Any) {
@@ -43,25 +51,32 @@ class SignIn: UIViewController {
    }
         
     func firebasauth(_ credential:AuthCredential){
-        Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+        Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
             
             if error != nil {
                 print("khaled: can not authenticate with firebase - \(String(describing: error))")
             }
             else{
                 print("khaled: successfuly authenticated with firebase")
+                
+               if let user = user{
+                self.completesignin(id: user.user.uid)
+                }
             }
         }
     }
     @IBAction func signinbuttontabbed(_ sender: Any) {
         
         if let email = emailfield.text,let pass = passwordfield.text{
-            Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
+            Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
                 if error == nil{
                     print("khaled: email user authenticated successfully with firebase")
+                    if let user = user{
+                        self.completesignin(id: user.user.uid)
+                    }
                 }
                 else{
-                    Auth.auth().createUser(withEmail: email, password: pass, completion: { (rsult, error) in
+                    Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
                         if error == nil{
                             print("khaled: successfuly created user")
                         }
@@ -73,6 +88,13 @@ class SignIn: UIViewController {
             }
         }
         
+    }
+    
+    func completesignin(id:String)
+    {
+        KeychainWrapper.standard.set(id, forKey: key_Uid)
+        print("khaled: keychain had saved")
+        performSegue(withIdentifier: "FeedVC", sender: nil)
     }
 }
 

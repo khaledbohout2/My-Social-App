@@ -10,3 +10,5 @@ import Foundation
 import UIKit
 
 let shadow_grey:CGFloat = 120.0 / 255.0
+
+let key_Uid = "uid"
