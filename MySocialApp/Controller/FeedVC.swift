@@ -46,7 +46,17 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return (tableview.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell)!
+        let post = posts[indexPath.row]
+        if let cell = tableview.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
+            cell.configurecell(post: post)
+            return cell
+            
+        }
+        else{
+            return PostCell()
+            
+        }
+        
     }
     
 
