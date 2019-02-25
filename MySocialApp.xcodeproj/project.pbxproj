@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54D53C8D1378599AB7BE3D6A /* Pods_MySocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1E18D81D32BB03E2A4B329 /* Pods_MySocialApp.framework */; };
+		7C0720F022235AC500E5AF28 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0720EF22235AC500E5AF28 /* DataService.swift */; };
 		7C13E73E221C8425007C3044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13E73D221C8425007C3044 /* AppDelegate.swift */; };
 		7C13E740221C8425007C3044 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13E73F221C8425007C3044 /* SignIn.swift */; };
 		7C13E743221C8425007C3044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C13E741221C8425007C3044 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 		7C27423E221DF6D400739F05 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C27423D221DF6D400739F05 /* Default-568h@2x.png */; };
 		7C50C6CC2221F9B900027EE8 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50C6CB2221F9B900027EE8 /* FeedVC.swift */; };
 		7C50C6CE22221BA500027EE8 /* circleimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50C6CD22221BA500027EE8 /* circleimage.swift */; };
+		7C6365A02222FFA500B570D9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63659F2222FFA500B570D9 /* PostCell.swift */; };
 		7C7EBEB8221C9F5800B75B48 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBEB7221C9F5800B75B48 /* Constants.swift */; };
 		7C7EBEBD221C9F6600B75B48 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBEB9221C9F6600B75B48 /* FancyButton.swift */; };
 		7C7EBEBE221C9F6600B75B48 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBEBA221C9F6600B75B48 /* FancyField.swift */; };
@@ -26,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6497DBAAC965F4AB6B6BF0B8 /* Pods-MySocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySocialApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySocialApp/Pods-MySocialApp.release.xcconfig"; sourceTree = "<group>"; };
+		7C0720EF22235AC500E5AF28 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		7C13E73A221C8425007C3044 /* MySocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C13E73D221C8425007C3044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C13E73F221C8425007C3044 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		7C27423D221DF6D400739F05 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7C50C6CB2221F9B900027EE8 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		7C50C6CD22221BA500027EE8 /* circleimage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleimage.swift; sourceTree = "<group>"; };
+		7C63659F2222FFA500B570D9 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		7C7EBEB7221C9F5800B75B48 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7C7EBEB9221C9F6600B75B48 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
 		7C7EBEBA221C9F6600B75B48 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C0720EE22235A9800E5AF28 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7C0720EF22235AC500E5AF28 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		7C13E731221C8425007C3044 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		7C13E73C221C8425007C3044 /* MySocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				7C0720EE22235A9800E5AF28 /* Services */,
 				7CDDDE6B221C87B9005A8F41 /* Model */,
 				7CDDDE6A221C87B2005A8F41 /* View */,
 				7CDDDE69221C87AA005A8F41 /* Controller */,
@@ -127,6 +140,7 @@
 				7C7EBEBB221C9F6600B75B48 /* FancyView.swift */,
 				7C7EBEBC221C9F6600B75B48 /* RoundButton.swift */,
 				7C50C6CD22221BA500027EE8 /* circleimage.swift */,
+				7C63659F2222FFA500B570D9 /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,8 +308,10 @@
 				7C50C6CC2221F9B900027EE8 /* FeedVC.swift in Sources */,
 				7C7EBEBE221C9F6600B75B48 /* FancyField.swift in Sources */,
 				7C50C6CE22221BA500027EE8 /* circleimage.swift in Sources */,
+				7C0720F022235AC500E5AF28 /* DataService.swift in Sources */,
 				7C13E73E221C8425007C3044 /* AppDelegate.swift in Sources */,
 				7C7EBEB8221C9F5800B75B48 /* Constants.swift in Sources */,
+				7C6365A02222FFA500B570D9 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

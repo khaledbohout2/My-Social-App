@@ -19,6 +19,8 @@ class SignIn: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,7 +62,8 @@ class SignIn: UIViewController {
                 print("khaled: successfuly authenticated with firebase")
                 
                if let user = user{
-                self.completesignin(id: user.user.uid)
+                let userdata = ["provider" :credential.provider]
+                self.completesignin(id: user.user.uid,userdata: userdata)
                 }
             }
         }
@@ -72,12 +75,18 @@ class SignIn: UIViewController {
                 if error == nil{
                     print("khaled: email user authenticated successfully with firebase")
                     if let user = user{
-                        self.completesignin(id: user.user.uid)
+                        let userdata = ["provider":user.user.providerID]
+                        self.completesignin(id: user.user.uid,userdata: userdata)
+                        
                     }
                 }
                 else{
                     Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
                         if error == nil{
+                            if let user = user{
+                                let userdata = ["provider":user.user.providerID]
+                                self.completesignin(id: user.user.uid,userdata: userdata)
+                            }
                             print("khaled: successfuly created user")
                         }
                         else{
@@ -90,8 +99,10 @@ class SignIn: UIViewController {
         
     }
     
-    func completesignin(id:String)
-    {
+    func completesignin(id:String,userdata: Dictionary<String, String>){
+        
+        DataService.ds.creatfirebaseDBuser(uid: id, userdata: userdata)
+        print("khaled: added user with id\(id),with provider \(userdata)")
         KeychainWrapper.standard.set(id, forKey: key_Uid)
         print("khaled: keychain had saved")
         performSegue(withIdentifier: "FeedVC", sender: nil)
