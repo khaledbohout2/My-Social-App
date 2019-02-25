@@ -24,6 +24,7 @@
 		7C7EBEBE221C9F6600B75B48 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBEBA221C9F6600B75B48 /* FancyField.swift */; };
 		7C7EBEBF221C9F6600B75B48 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBEBB221C9F6600B75B48 /* FancyView.swift */; };
 		7C7EBEC0221C9F6600B75B48 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBEBC221C9F6600B75B48 /* RoundButton.swift */; };
+		7CC06DAA2224943700A63471 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC06DA92224943700A63471 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		7C7EBEBA221C9F6600B75B48 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		7C7EBEBB221C9F6600B75B48 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		7C7EBEBC221C9F6600B75B48 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		7CC06DA92224943700A63471 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9E1E18D81D32BB03E2A4B329 /* Pods_MySocialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySocialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06025CBB34BC3AB4772F96E /* Pods-MySocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySocialApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySocialApp/Pods-MySocialApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 		7CDDDE6B221C87B9005A8F41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7CC06DA92224943700A63471 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				7C13E740221C8425007C3044 /* SignIn.swift in Sources */,
 				7C7EBEBD221C9F6600B75B48 /* FancyButton.swift in Sources */,
 				7C7EBEC0221C9F6600B75B48 /* RoundButton.swift in Sources */,
+				7CC06DAA2224943700A63471 /* Post.swift in Sources */,
 				7C7EBEBF221C9F6600B75B48 /* FancyView.swift in Sources */,
 				7C50C6CC2221F9B900027EE8 /* FeedVC.swift in Sources */,
 				7C7EBEBE221C9F6600B75B48 /* FancyField.swift in Sources */,

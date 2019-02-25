@@ -9,8 +9,11 @@
 import UIKit
 import SwiftKeychainWrapper
 import Firebase
+import FirebaseDatabase
 
 class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    var posts = [Post]()
 
     @IBOutlet weak var tableview: UITableView!
     
@@ -20,9 +23,18 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         tableview.delegate = self
         tableview.dataSource = self
         
-       DataService.ds.Ref_Posts.observe(.value,with: { (SnapShot) in
+       DataService.ds.Ref_Posts.observe(.value,with: { (snapshot) in
         
-        print(SnapShot.value!)
+        if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+            for snap in snapshot{
+                if let postdict = snap.value as? Dictionary<String,AnyObject>{
+                    let key = snap.key
+                    let post = Post(postkey: key, postdata: postdict)
+                    self.posts.append(post)
+                }
+            }
+        }
+        self.tableview.reloadData()
         })
 
     }
@@ -31,7 +43,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return (tableview.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell)!
