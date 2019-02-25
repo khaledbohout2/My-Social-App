@@ -20,7 +20,6 @@ class SignIn: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,9 +101,7 @@ class SignIn: UIViewController {
     func completesignin(id:String,userdata: Dictionary<String, String>){
         
         DataService.ds.creatfirebaseDBuser(uid: id, userdata: userdata)
-        print("khaled: added user with id\(id),with provider \(userdata)")
         KeychainWrapper.standard.set(id, forKey: key_Uid)
-        print("khaled: keychain had saved")
         performSegue(withIdentifier: "FeedVC", sender: nil)
     }
 }

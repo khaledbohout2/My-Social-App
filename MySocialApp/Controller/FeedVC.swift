@@ -19,7 +19,11 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         tableview.delegate = self
         tableview.dataSource = self
-        print("khaled: \(DB_FireBase)")
+        
+       DataService.ds.Ref_Posts.observe(.value,with: { (SnapShot) in
+        
+        print(SnapShot.value!)
+        })
 
     }
     
@@ -37,8 +41,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBAction func signoutbuttontapped(_ sender: Any) {
         
-        let removeSuccessful: Bool = KeychainWrapper.standard.removeObject(forKey: key_Uid)
-        print("khaled: keychain successfully removed\(removeSuccessful)")
+        KeychainWrapper.standard.removeObject(forKey: key_Uid)
         try! Auth.auth().signOut()
         performSegue(withIdentifier: "SignOut", sender: nil)
         
