@@ -14,8 +14,8 @@ import FirebaseDatabase
 class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var posts = [Post]()
-    
     var imagepicker:UIImagePickerController!
+    static var imagecash: NSCache<NSString,UIImage> = NSCache()
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var imageadd: circleimage!
@@ -55,8 +55,16 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImage
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
         if let cell = tableview.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
-            cell.configurecell(post: post)
-            return cell
+            
+            if let img =  FeedVC.imagecash.object(forKey: post.imageurl as NSString){
+                cell.configurecell(post: post,img : img)
+                return cell
+        }
+            else{
+                cell.configurecell(post: post)
+                return cell
+            }
+            
             
         }
         else{

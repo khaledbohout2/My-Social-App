@@ -11,14 +11,17 @@ import Firebase
 import FirebaseDatabase
 
 let DB_FireBase = Database.database().reference()
+let DB_Storage = Storage.storage().reference()
 
 class DataService {
     
     static let ds = DataService()
-    
+    //database references
     private var _Ref_Base  = DB_FireBase
     private var _Ref_Posts = DB_FireBase.child("posts")
     private var _Ref_Users = DB_FireBase.child("users")
+    //storagereferences
+    private var _ref_post_images = DB_Storage.child("posts-pics")
     
     var Ref_Base: DatabaseReference {
         return _Ref_Base
@@ -29,6 +32,9 @@ class DataService {
     }
     var Ref_Users: DatabaseReference{
         return _Ref_Users
+    }
+    var Ref_post_images: StorageReference{
+        return _ref_post_images
     }
     
     func creatfirebaseDBuser(uid:String,userdata:Dictionary<String,String>){
