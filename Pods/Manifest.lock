@@ -94,6 +94,8 @@ PODS:
   - SwiftKeychainWrapper (3.2.0)
 
 DEPENDENCIES:
+  - Bolts
+  - FacebookCore
   - FacebookLogin
   - FBSDKCoreKit
   - Firebase/Auth
@@ -145,6 +147,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
 
-PODFILE CHECKSUM: 07e3e19ae1551d63303fd81cb9086ddf7581769a
+PODFILE CHECKSUM: b5d1f674ad5c8e7f84fbd0f4310f56ae9483fa2e
 
 COCOAPODS: 1.5.3

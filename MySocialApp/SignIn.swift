@@ -19,6 +19,7 @@ class SignIn: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hey \(DataService.ds.Ref_post_images)")
         
     }
     

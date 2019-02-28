@@ -10,9 +10,12 @@ target 'MySocialApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'FacebookLogin'
+  pod 'FacebookLogin', :inhibit_warnings => true
   pod 'FBSDKCoreKit'
   pod 'SwiftKeychainWrapper'
+  pod 'FacebookCore', :inhibit_warnings => true
+  pod 'Bolts', :modular_headers => true, :inhibit_warnings => true
+  
 
 
 

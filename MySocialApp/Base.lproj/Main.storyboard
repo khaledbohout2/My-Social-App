@@ -187,7 +187,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="iNo-3Z-m6S" appends="YES" id="b1O-rK-D3k"/>
                                                 </connections>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Some Person  do Not Now" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vc5-QC-bR7" customClass="FancyField" customModule="MySocialApp" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="add a caption" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vc5-QC-bR7" customClass="FancyField" customModule="MySocialApp" customModuleProvider="target">
                                                 <rect key="frame" x="59" y="0.0" width="209" height="49"/>
                                                 <color key="textColor" red="0.90980392160000001" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
@@ -201,6 +201,9 @@
                                                     <constraint firstAttribute="width" constant="49" id="kHa-gE-wpI"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postbuttontapped:" destination="3qr-SB-8Re" eventType="touchUpInside" id="VwR-jC-SnX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -241,7 +244,7 @@
                                                                                 <constraint firstAttribute="height" constant="60" id="S7O-Ab-m5I"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLo-gU-Fl8">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khaled Bohout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLo-gU-Fl8">
                                                                             <rect key="frame" x="71" y="0.0" width="203" height="60"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                                             <color key="textColor" red="0.90980392160000001" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -258,6 +261,10 @@
                                                                 </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="MWF-M5-3JY">
                                                                     <rect key="frame" x="0.0" y="65" width="345" height="153"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="345" id="MQ1-Js-bca"/>
+                                                                        <constraint firstAttribute="height" constant="153" id="dQl-Nr-yi1"/>
+                                                                    </constraints>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-MR-6XK">
                                                                     <rect key="frame" x="0.0" y="223" width="345" height="50"/>
@@ -309,6 +316,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionlbl" destination="KYz-MR-6XK" id="hle-Q7-Zwv"/>
+                                            <outlet property="likesimage" destination="mCu-Dq-nef" id="V4I-LT-Pto"/>
                                             <outlet property="likeslbl" destination="qFd-to-9ti" id="RZz-f0-wYQ"/>
                                             <outlet property="postimg" destination="MWF-M5-3JY" id="P6A-Kc-wJ0"/>
                                             <outlet property="profileimg" destination="d0U-6J-imT" id="6IO-lW-hs1"/>
@@ -334,6 +342,7 @@
                         <viewLayoutGuide key="safeArea" id="RJC-ZU-fLc"/>
                     </view>
                     <connections>
+                        <outlet property="captionfield" destination="vc5-QC-bR7" id="SR7-jJ-Zrc"/>
                         <outlet property="imageadd" destination="ax6-0g-Y2S" id="mcD-dL-fT0"/>
                         <outlet property="tableview" destination="Hbw-dQ-hSj" id="ozA-GK-jtr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SignOut" id="v7R-SU-Wt9"/>
