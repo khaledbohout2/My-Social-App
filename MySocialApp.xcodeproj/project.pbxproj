@@ -107,11 +107,7 @@
 				7CDDDE6A221C87B2005A8F41 /* View */,
 				7CDDDE69221C87AA005A8F41 /* Controller */,
 				7CDDDE68221C87A2005A8F41 /* Utils */,
-				7C13E73D221C8425007C3044 /* AppDelegate.swift */,
-				7C13E73F221C8425007C3044 /* SignIn.swift */,
-				7C13E741221C8425007C3044 /* Main.storyboard */,
 				7C13E744221C8426007C3044 /* Assets.xcassets */,
-				7C13E746221C8426007C3044 /* LaunchScreen.storyboard */,
 				7C13E749221C8426007C3044 /* Info.plist */,
 				7C13E74F221C845E007C3044 /* GoogleService-Info.plist */,
 			);
@@ -129,7 +125,9 @@
 		7CDDDE69221C87AA005A8F41 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7C13E73D221C8425007C3044 /* AppDelegate.swift */,
 				7C50C6CB2221F9B900027EE8 /* FeedVC.swift */,
+				7C13E73F221C8425007C3044 /* SignIn.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +141,8 @@
 				7C7EBEBC221C9F6600B75B48 /* RoundButton.swift */,
 				7C50C6CD22221BA500027EE8 /* circleimage.swift */,
 				7C63659F2222FFA500B570D9 /* PostCell.swift */,
+				7C13E741221C8425007C3044 /* Main.storyboard */,
+				7C13E746221C8426007C3044 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +198,7 @@
 				TargetAttributes = {
 					7C13E739221C8425007C3044 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -470,7 +471,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaled.MySocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -488,7 +489,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = khaled.MySocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
