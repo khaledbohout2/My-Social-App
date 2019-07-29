@@ -1,10 +1,8 @@
 # My-Social-App
 
-social network app using firebase
-
-
-
 ## What is My-Social-App 
+
+social network app using firebase
 
 * users authenticate with Firebase using their Facebook accounts 
 * integrate third party libraries in app.
